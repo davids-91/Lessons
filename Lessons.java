@@ -58,25 +58,25 @@ public class Lessons {
 		System.out.println("Min = " + min + "\nMax = " + max);
 	}
 	
-    private static int[] mergeTwoSortedArrays(int array1[], int array2[]) {
-    	//created an array with length of two arrays
-        int lengthOfMergedArray = array1.length + array2.length;
-        int arrayMerged[] = new int[lengthOfMergedArray];
-        /*
-         * i = new array index
-         * j = array1 index
-         * k = array2 index
-         * iterate through both arrays (array1 and array2) and find larger element
-         * if smaller element found, increment the counter of an array which contains that element and save it to a new array
-         * */
-        for (int i = 0, j = 0, k = 0; i < lengthOfMergedArray; i++) {
-            if (j == array1.length) { arrayMerged[i] = array2[k]; }
-            else if (k == array2.length) { arrayMerged[i] = array1[j]; }
-            else {
-                if (array1[j] < array2[k]) { arrayMerged[i] = array1[j]; j++; }
-                else { arrayMerged[i] = array2[k]; k++; }
-            }
-        }
-        return arrayMerged;
-    }
+	private static int[] mergeTwoSortedArrays(int array1[], int array2[]) {
+		//created an array with length of two arrays
+	    int lengthOfMergedArray = array1.length + array2.length;
+	    int arrayMerged[] = new int[lengthOfMergedArray];
+	    /*
+	     * i = new array index
+	     * j = array1 index
+	     * k = array2 index
+	     * iterate through both arrays (array1 and array2) and find larger element
+	     * if smaller element found, increment the counter of an array which contains that element and save it to a new array
+	     * */
+	    for (int i = 0, j = 0, k = 0; i < lengthOfMergedArray; i++) {
+	        if (j == array1.length) { arrayMerged[i] = array2[k]; }
+	        else if (k == array2.length) { arrayMerged[i] = array1[j]; }
+	        else {
+	            if (array1[j] < array2[k]) { arrayMerged[i] = array1[j]; j++; }
+	            else { arrayMerged[i] = array2[k]; k++; }
+	        }
+	    }
+	    return arrayMerged;
+	}
 }
