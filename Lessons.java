@@ -1,11 +1,13 @@
+import java.security.SecureRandom;
 import java.util.Arrays;
 
 public class Lessons {
 
 	public static void main(String[] args) {
-		findMinAndMax(new int[] {2,5,96,42});
-		findMinAndMax(3,4,6);
-		System.out.println(Arrays.toString(mergeTwoSortedArrays(new int[] {1,4,6,7}, new int[] {2,3,8})));
+//		findMinAndMax(new int[] {2,5,96,42});
+//		findMinAndMax(3,4,6);
+//		System.out.println(Arrays.toString(mergeTwoSortedArrays(new int[] {1,4,6,7}, new int[] {2,3,8})));
+		System.out.println(generatePassword(6));
 	}
 	
 	private static void findMinAndMax(int a, int b, int c) {
@@ -78,5 +80,28 @@ public class Lessons {
 	        }
 	    }
 	    return arrayMerged;
+	}
+	
+	private static String generatePassword(int length) {
+		final String CHAR_LOWER = "abcdefghijklmnopqrstuvwxyz";
+		final String CHAR_UPPER = CHAR_LOWER.toUpperCase();
+		final String NUMBER = "0123456789";
+		final String CHAR_SPECIAL = "!@#$%&*()_+-=[]?";
+		
+		final String ALLOWED_BASE = CHAR_LOWER + CHAR_UPPER + NUMBER + CHAR_SPECIAL;
+		
+		SecureRandom secureRandom = new SecureRandom();
+		
+		if (length < 6) {
+			return "Password should consist of more than 5 characters";
+		} else {
+			StringBuilder pass = new StringBuilder(length);
+			for (int i = 0; i < length; i++) {
+				int randomCharAt = secureRandom.nextInt(ALLOWED_BASE.length());
+				char randomChar = ALLOWED_BASE.charAt(randomCharAt);
+				pass.append(randomChar);
+			}
+			return pass.toString();
+		}
 	}
 }
