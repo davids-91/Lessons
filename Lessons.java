@@ -66,7 +66,7 @@ public class Lessons {
 	     * i = new array index
 	     * j = array1 index
 	     * k = array2 index
-	     * iterate through both arrays (array1 and array2) and find larger element
+	     * iterate through both arrays (array1 and array2) and find smaller element
 	     * if smaller element found, increment the counter of an array which contains that element and save it to a new array
 	     * */
 	    for (int i = 0, j = 0, k = 0; i < lengthOfMergedArray; i++) {
