@@ -7,7 +7,8 @@ public class zadanka1 {
 //		zad6();
 //		zad7();
 //		zad8();
-		zad9();
+//		zad9();
+		zad14();
 //		zad16(21);
 	}
 	
@@ -124,6 +125,17 @@ public class zadanka1 {
 			System.out.print(i + " ");
 			i = i * 2;
 		} while (i <= n);
+	}
+	
+	private static void zad14() {
+		int n = 5;
+		for (int i = 0; i < n; i++) { //rows
+			for (int j = 0; j < (n * 2 - 1); j++) { //columns
+				if (j <= ((n - 1) + i) && (j >= ((n - 1) - i))) System.out.print('*');
+				else System.out.print(' ');
+			}
+			System.out.print("\n");
+		}
 	}
 	
 	private static void zad16(int number) {
