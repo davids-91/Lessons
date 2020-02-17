@@ -8,7 +8,8 @@ public class zadanka1 {
 //		zad7();
 //		zad8();
 //		zad9();
-		zad14();
+		zad11();
+//		zad14();
 //		zad16(21);
 	}
 	
@@ -125,6 +126,25 @@ public class zadanka1 {
 			System.out.print(i + " ");
 			i = i * 2;
 		} while (i <= n);
+	}
+	
+	private static void zad11() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Podaj liczbę n = ");
+		int n = sc.nextInt();
+		// initialize min & max
+		int min = n;
+		int max = n;
+		while (n != 0) {
+			System.out.print("Podaj liczbę n = ");
+			n = sc.nextInt();
+			if (n != 0) {
+				if (n < min) min = n;
+				if (n > max) max = n;
+			}
+		}
+		System.out.println("Suma max + min = " + (max + min));
+		System.out.println("Średnia max i min = " + (max + min) / 2);
 	}
 	
 	private static void zad14() {
