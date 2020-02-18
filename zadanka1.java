@@ -8,8 +8,9 @@ public class zadanka1 {
 //		zad7();
 //		zad8();
 //		zad9();
-		zad11();
+//		zad11();
 //		zad14();
+		zad15();
 //		zad16(21);
 	}
 	
@@ -156,6 +157,24 @@ public class zadanka1 {
 			}
 			System.out.print("\n");
 		}
+	}
+	
+	private static void zad15() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Podaj liczbę = ");
+		int input = sc.nextInt();
+		int remainder, sum = 0, evenNumbers = 0, evenCount = 0, oddNumbers = 0, oddCount = 0;
+		while (input > 0) {
+			remainder = input % 10;
+			sum += remainder;
+			if (remainder % 2 == 0) { evenNumbers += remainder; evenCount++; }
+			else { oddNumbers += remainder; oddCount++; }
+			input = input / 10;
+		}
+		if (evenCount == 0) evenCount++;
+		if (oddCount == 0) oddCount++;
+		System.out.println("Suma cyfr = " + sum);
+		System.out.println("Stosunek śr. cyfr parzystych do nieparzystych = " + ((float) evenNumbers / evenCount) / ((float) oddNumbers / oddCount));
 	}
 	
 	private static void zad16(int number) {
