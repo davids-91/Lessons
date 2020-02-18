@@ -148,6 +148,28 @@ public class zadanka1 {
 		System.out.println("Średnia max i min = " + (max + min) / 2);
 	}
 	
+	private static void zad13() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Podaj współrzędną x = ");
+		int x = sc.nextInt();
+		System.out.print("Podaj współrzędną y = ");
+		int y = sc.nextInt();
+		System.out.print("Podaj długość boku a = ");
+		int a = sc.nextInt();
+		System.out.print("Podaj długość boku b = ");
+		int b = sc.nextInt();
+		System.out.print("Podaj znak = ");
+		char sign = sc.next().charAt(0);
+		
+		for (int i = 1; i < y + a; i++) { //rows
+			for (int j = 1; j < x + b; j++) { //columns
+				if (j >= x && i >= y) System.out.print(sign);
+				else System.out.print(" ");
+			}
+			System.out.print("\n");
+		}
+	}
+	
 	private static void zad14() {
 		int n = 5;
 		for (int i = 0; i < n; i++) { //rows
