@@ -6,12 +6,12 @@ namespace scripts
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(divideWords("AlaMaKota"));
+            Console.WriteLine(divideWords("alaMaKota"));
         }
 
         public static String divideWords(String input) {
             // replace first char if uppercase
-            if (Char.IsUpper(input[0])) input = (input.Substring(0, 1).ToLower()) + input.Substring(1);
+            if (Char.IsLower(input[0])) input = (input.Substring(0, 1).ToUpper()) + input.Substring(1);
             // search uppercase chars and replace with space + lowercase
             int i = 1;
             while (i < input.Length) {
