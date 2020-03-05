@@ -10,7 +10,9 @@ namespace scripts
         }
 
         public static String divideWords(String input) {
-            input = (input.Substring(0, 1).ToLower()) + input.Substring(1);
+            // replace first char if uppercase
+            if (Char.IsUpper(input[0])) input = (input.Substring(0, 1).ToLower()) + input.Substring(1);
+            // search uppercase chars and replace with space + lowercase
             int i = 1;
             while (i < input.Length) {
                 if (Char.IsUpper(input[i])) {
