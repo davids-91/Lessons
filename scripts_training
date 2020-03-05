@@ -1,0 +1,23 @@
+using System;
+
+namespace scripts
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(divideWords("alaMaKota"));
+        }
+
+        public static String divideWords(String input) {
+            int i = 0;
+            while (i < input.Length) {
+                if (Char.IsUpper(input[i])) {
+                    input = input.Substring(0, i) + " " + (input.Substring(i, 1)).ToLower() + input.Substring(i + 1);
+                }
+                i++;
+            }
+            return input;
+        }
+    }
+}
